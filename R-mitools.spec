@@ -4,7 +4,7 @@
 #
 Name     : R-mitools
 Version  : 2.3
-Release  : 2
+Release  : 3
 URL      : https://cran.r-project.org/src/contrib/mitools_2.3.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/mitools_2.3.tar.gz
 Summary  : Tools for multiple imputation of missing data
