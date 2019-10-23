@@ -4,7 +4,7 @@
 #
 Name     : R-mitools
 Version  : 2.4
-Release  : 12
+Release  : 13
 URL      : https://cran.r-project.org/src/contrib/mitools_2.4.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/mitools_2.4.tar.gz
 Summary  : Tools for Multiple Imputation of Missing Data
@@ -13,6 +13,7 @@ License  : GPL-2.0
 Requires: R-DBI
 BuildRequires : R-DBI
 BuildRequires : buildreq-R
+BuildRequires : util-linux
 
 %description
 multiple-imputation datasets.
@@ -24,13 +25,13 @@ multiple-imputation datasets.
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
-export LANG=C
-export SOURCE_DATE_EPOCH=1556294485
+export LANG=C.UTF-8
+export SOURCE_DATE_EPOCH=1571866805
 
 %install
-export SOURCE_DATE_EPOCH=1556294485
+export SOURCE_DATE_EPOCH=1571866805
 rm -rf %{buildroot}
-export LANG=C
+export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -59,7 +60,7 @@ R CMD INSTALL --preclean --install-tests --built-timestamp=${SOURCE_DATE_EPOCH} 
 cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
 %{__rm} -rf %{buildroot}%{_datadir}/R/library/R.css
 %check
-export LANG=C
+export LANG=C.UTF-8
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
