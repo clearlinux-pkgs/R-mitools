@@ -4,7 +4,7 @@
 #
 Name     : R-mitools
 Version  : 2.4
-Release  : 16
+Release  : 17
 URL      : https://cran.r-project.org/src/contrib/mitools_2.4.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/mitools_2.4.tar.gz
 Summary  : Tools for Multiple Imputation of Missing Data
@@ -13,28 +13,28 @@ License  : GPL-2.0
 Requires: R-DBI
 BuildRequires : R-DBI
 BuildRequires : buildreq-R
-BuildRequires : util-linux
 
 %description
 multiple-imputation datasets.
 
 %prep
 %setup -q -c -n mitools
+cd %{_builddir}/mitools
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1571866805
+export SOURCE_DATE_EPOCH=1589520317
 
 %install
-export SOURCE_DATE_EPOCH=1571866805
+export SOURCE_DATE_EPOCH=1589520317
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
-export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
-export FFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
+export FCFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
+export FFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
 export CXXFLAGS="$CXXFLAGS -O3 -flto -fno-semantic-interposition "
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
